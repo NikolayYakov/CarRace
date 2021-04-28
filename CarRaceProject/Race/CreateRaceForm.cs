@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace Race
 {
-    public partial class Form1 : Form
+    public partial class CreateRaceForm : Form
     {
-        public Form1()
+        public CreateRaceForm()
         {
             InitializeComponent();
         }
-
     }
 }
