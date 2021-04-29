@@ -1,14 +1,14 @@
-﻿using Race.Models.Drivers.Contracts;
-using Race.Models.Races.Contracts;
+﻿using CarsRace.Models.Drivers.Contracts;
+using CarsRace.Models.Races.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Race.Models.Races.Entities
+namespace CarsRace.Models.Races.Entities
 {
-    public class Race:IRace
+    public class Race : IRace
     {
         private string name;
         private int laps;

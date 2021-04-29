@@ -1,11 +1,11 @@
-﻿using Race.Models.Cars.Contracts;
+﻿using CarsRace.Models.Cars.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Race.Models.Drivers.Contracts
+namespace CarsRace.Models.Drivers.Contracts
 {
     public interface IDriver
     {

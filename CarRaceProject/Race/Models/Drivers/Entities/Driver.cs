@@ -1,12 +1,12 @@
-﻿using Race.Models.Cars.Contracts;
-using Race.Models.Drivers.Contracts;
+﻿using CarsRace.Models.Cars.Contracts;
+using CarsRace.Models.Drivers.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Race.Models.Drivers.Entities
+namespace CarsRace.Models.Drivers.Entities
 {
     public class Driver:IDriver
     {

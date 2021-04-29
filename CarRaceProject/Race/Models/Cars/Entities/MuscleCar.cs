@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Race.Models.Cars.Entities
+namespace CarsRace.Models.Cars.Entities
 {
     public class MuscleCar:Car
     {

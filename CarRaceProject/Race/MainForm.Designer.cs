@@ -1,5 +1,5 @@
 ﻿
-namespace Race
+namespace CarsRace
 {
     partial class MainForm
     {
@@ -60,7 +60,7 @@ namespace Race
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Race.Properties.Resources.race_arcade_switch_hero;
+            this.BackgroundImage = global::CarsRace.Properties.Resources.race_arcade_switch_hero;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1032, 524);
             this.Controls.Add(this.ExitButton);

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Race.Models.Cars.Contracts
+namespace CarsRace.Models.Cars.Contracts
 {
     public interface ICar
     {
