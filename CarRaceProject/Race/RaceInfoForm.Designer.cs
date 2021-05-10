@@ -99,6 +99,7 @@ namespace CarsRace
             this.AddButton.TabIndex = 6;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // removeButton
             // 
@@ -108,6 +109,7 @@ namespace CarsRace
             this.removeButton.TabIndex = 7;
             this.removeButton.Text = "Remove";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
             // RaceInfoForm
             // 
