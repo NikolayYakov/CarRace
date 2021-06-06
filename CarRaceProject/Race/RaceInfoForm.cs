@@ -38,24 +38,64 @@ namespace CarsRace
         private void AddButton_Click(object sender, EventArgs e)
         {
             var fp = new DriverForm();
+            fp.Race = Race;
             if (fp.ShowDialog() == DialogResult.OK)
-            {
-                if (fp.Driver.CanParticipate == true)
-                {
-                    driver = fp.Driver;
-                    driversList.Items.Add(fp.Driver);
-                }
-                
+            {   
+                driver = fp.Driver;
+                driversList.Items.Add(fp.Driver);
+                race.AddDriver(fp.Driver);   
             }
         }
 
         private void removeButton_Click(object sender, EventArgs e)
         {
-            if (driversList.SelectedItem == null)
+            try
             {
-                return;
+                if (driversList.SelectedItem == null)
+                {
+                    throw new ArgumentException("You need to select a driver to remove it.");
+
+                }
+                IDriver driver = (IDriver)driversList.SelectedItem;
+                driversList.Items.Remove(driver);
+                race.RemoveDriver(driver);
             }
-            driversList.Items.Remove(driversList.SelectedItem);
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+
+
+            
+        }
+
+        private void startRaceButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (race.Drivers.Count < 3)
+                {
+                    throw new ArgumentException("Drivers Should be at least 3 to start a race");
+                }
+
+ 
+                var fp = new ResultForm();
+                fp.Race = Race;
+                List<IDriver> drivers = race.Drivers.ToList();
+                drivers = drivers.OrderBy(d => d.Car.CalculateRacePoints(race.Laps)).ThenBy(d=>d.Car.HorsePower).ThenBy(d=>d.Car.Model).ToList();
+                fp.Drivers = drivers;
+                Hide();
+                fp.ShowDialog();
+                Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
     }
 }

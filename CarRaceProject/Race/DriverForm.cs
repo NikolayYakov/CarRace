@@ -1,6 +1,7 @@
 ﻿using CarsRace.Models.Cars.Contracts;
 using CarsRace.Models.Drivers.Contracts;
 using CarsRace.Models.Drivers.Entities;
+using CarsRace.Models.Races.Contracts;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace CarsRace
     {
         public IDriver Driver { get;private set; }
         public ICar Car { get;private set; }
+        public IRace Race { get; set; }
         public DriverForm()
         {
             InitializeComponent();
@@ -24,9 +26,25 @@ namespace CarsRace
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            Driver = new Driver(driverName.Text);
-            Driver.AddCar(Car);
-            Close();
+            try
+            {
+                 
+                Driver = new Driver(driverName.Text);
+                Driver.AddCar(Car);
+                var existingDriver = Race.Drivers.FirstOrDefault(d => d.Name == driverName.Text);
+                if (existingDriver != null)
+                {
+                    throw new Exception($"Driver {driverName.Text} is already added in {Race.Name} race.");
+                }
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }  
+            
         }
 
         private void carButton_Click(object sender, EventArgs e)
@@ -36,6 +54,7 @@ namespace CarsRace
             {
                 Car = fp.Car;
             }
+             
             
         }
     }

@@ -16,5 +16,6 @@ namespace CarsRace.Models.Races.Contracts
         IReadOnlyCollection<IDriver> Drivers { get; }
 
         void AddDriver(IDriver driver);
+        void RemoveDriver(IDriver driver);
     }
 }

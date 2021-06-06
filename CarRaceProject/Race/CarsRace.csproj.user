@@ -16,5 +16,8 @@
     <Compile Update="RaceInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ResultForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

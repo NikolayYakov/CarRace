@@ -51,5 +51,9 @@ namespace CarsRace.Models.Drivers.Entities
         {
             NumberOfWins++;
         }
+        public override string ToString()
+        {
+            return $"Driver {Name} with a {Car.Model}.";
+        }
     }
 }

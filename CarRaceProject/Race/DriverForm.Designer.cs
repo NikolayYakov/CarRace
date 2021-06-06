@@ -63,7 +63,7 @@ namespace CarsRace
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(331, 156);
+            this.okButton.Location = new System.Drawing.Point(134, 168);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(94, 29);
             this.okButton.TabIndex = 3;
@@ -75,12 +75,15 @@ namespace CarsRace
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 221);
+            this.ClientSize = new System.Drawing.Size(230, 221);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.carButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.driverName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "DriverForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DriverForm";
             this.ResumeLayout(false);
             this.PerformLayout();

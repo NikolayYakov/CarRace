@@ -114,7 +114,10 @@ namespace CarsRace
             this.Controls.Add(this.label1);
             this.Controls.Add(this.hpTextBox);
             this.Controls.Add(this.modelBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "CarInfoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "CarInfoForm";
             this.ResumeLayout(false);
             this.PerformLayout();

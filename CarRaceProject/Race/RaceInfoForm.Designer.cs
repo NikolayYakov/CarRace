@@ -37,6 +37,7 @@ namespace CarsRace
             this.label3 = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
+            this.startRaceButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // RaceName
@@ -111,11 +112,22 @@ namespace CarsRace
             this.removeButton.UseVisualStyleBackColor = true;
             this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
             // 
+            // startRaceButton
+            // 
+            this.startRaceButton.Location = new System.Drawing.Point(160, 409);
+            this.startRaceButton.Name = "startRaceButton";
+            this.startRaceButton.Size = new System.Drawing.Size(94, 29);
+            this.startRaceButton.TabIndex = 8;
+            this.startRaceButton.Text = "Start Race";
+            this.startRaceButton.UseVisualStyleBackColor = true;
+            this.startRaceButton.Click += new System.EventHandler(this.startRaceButton_Click);
+            // 
             // RaceInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(282, 450);
+            this.Controls.Add(this.startRaceButton);
             this.Controls.Add(this.removeButton);
             this.Controls.Add(this.AddButton);
             this.Controls.Add(this.label3);
@@ -124,7 +136,10 @@ namespace CarsRace
             this.Controls.Add(this.raceLaps);
             this.Controls.Add(this.driversList);
             this.Controls.Add(this.RaceName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "RaceInfoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RaceInfoForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -141,5 +156,6 @@ namespace CarsRace
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.Button startRaceButton;
     }
 }

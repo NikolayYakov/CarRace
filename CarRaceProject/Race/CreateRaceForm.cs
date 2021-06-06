@@ -20,15 +20,23 @@ namespace CarsRace
         }
         public IRace Race { get;private set; }
         private void CreateRaceButton_Click(object sender, EventArgs e)
-        {  
-            int labs = int.Parse(RaceBoxLabs.Text);
-            Race = new Race(RaceNameBox.Text, labs); 
-            var fp = new RaceInfoForm();
-            Hide();
-            fp.Race = Race;
-            fp.ShowDialog();
-            Close();  
-            
+        {
+            try
+            {
+                int labs = int.Parse(RaceBoxLabs.Text);
+                Race = new Race(RaceNameBox.Text, labs);
+                var fp = new RaceInfoForm();
+                Hide();
+                fp.Race = Race;
+                fp.ShowDialog();
+                Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
 
         }
     }

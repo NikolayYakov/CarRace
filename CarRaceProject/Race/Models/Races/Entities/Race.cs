@@ -79,5 +79,9 @@ namespace CarsRace.Models.Races.Entities
 
 
         }
+        public void RemoveDriver(IDriver driver)
+        {
+            drivers.Remove(driver);
+        }
     }
 }

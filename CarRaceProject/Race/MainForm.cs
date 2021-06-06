@@ -19,7 +19,7 @@ namespace CarsRace
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            Close();
+            Application.Exit();
         }
 
         private void CreateRaceButton_Click(object sender, EventArgs e)

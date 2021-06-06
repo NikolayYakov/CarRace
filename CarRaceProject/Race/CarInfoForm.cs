@@ -23,19 +23,31 @@ namespace CarsRace
 
         private void OKButton_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string model = modelBox.Text;
+                int hp = int.Parse(hpTextBox.Text);
+                if (sportsCarButton.Checked == true)
+                {
+                    Car = new SportsCar(model, hp);
+                }
+                else if (muscleCarButton.Checked == true)
+                {
+                    Car = new MuscleCar(model, hp);
+                }
+                else
+                {
+                    throw new ArgumentException("You need to select a car.");
+                }
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             
-            string model = modelBox.Text;
-            int hp = int.Parse(hpTextBox.Text);
-            if (sportsCarButton.Checked==true)
-            {
-                Car = new SportsCar(model, hp);
-            }
-            else if(muscleCarButton.Checked==true)
-            {
-                Car = new MuscleCar(model, hp);
-            }
-            DialogResult = DialogResult.OK;
-            Close();
         }
     }
 }
